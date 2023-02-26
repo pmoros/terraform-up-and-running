@@ -9,3 +9,7 @@ Deploying a single server, then a web server, after this a cluster and finally a
 # 2. Cluster of web server
 
 ![Cluster of web server](../resources/02-cluster-web-server.png)
+
+# 3. Cluster of web server with load balancer
+
+![Cluster of web server with load balancer](../resources/02-cluster-web-server-load-balancer.png)
