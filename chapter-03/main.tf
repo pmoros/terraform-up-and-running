@@ -21,7 +21,7 @@ resource "aws_s3_bucket_versioning" "terraform_state" {
 }
 
 # Enable server-side encryption by default
-resource "aws_s3_bucket_server_side_encryption_configuration" "example" {
+resource "aws_s3_bucket_server_side_encryption_configuration" "terraform_state" {
   bucket = aws_s3_bucket_versioning.terraform_state.bucket
 
   rule {
