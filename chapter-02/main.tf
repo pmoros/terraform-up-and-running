@@ -45,6 +45,26 @@ resource "aws_autoscaling_group" "example" {
     }
 }
 
+resource "aws_lb" "example" {
+    name = "terraform-asg-example"
+    load_balancer_type = "application"
+    subnets = data.aws_subnets.default.ids
+}
+
+resource "aws_lb_listener" "http" {
+    load_balancer_arn = aws_lb.example.arn
+    port = 80
+    protocol = "HTTP"
+    # By default, return a simple 404 page
+    default_action {
+        type = "fixed-response"
+        fixed_response {
+            content_type = "text/plain"
+            message_body = "404: page not found"
+            status_code = 404
+        }
+    }
+}
 
 resource "aws_security_group" "instance" {
     name = "terraform-example-instance"
