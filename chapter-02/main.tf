@@ -19,6 +19,11 @@ variable "server_port" {
     default = 8080
 }
 
+output "alb_dns_name" {
+    value = aws_lb.example.dns_name
+    description = "The domain name of the load balancer"
+}
+
 
 resource "aws_launch_configuration" "example" {
     image_id = "ami-0c55b159cbfafe1f0"
