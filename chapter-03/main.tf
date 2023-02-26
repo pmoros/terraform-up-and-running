@@ -5,7 +5,7 @@ provider "aws" {
 # Enable versioning so we can see the full revision history of our
 # state files
 resource "aws_s3_bucket_versioning" "terraform_state" {
-  bucket = "terraform-up-and-running-state"
+  bucket = "paul-moros-terraform-up-and-running-state"
 
   # Prevent accidental deletion of this S3 bucket
   lifecycle {
