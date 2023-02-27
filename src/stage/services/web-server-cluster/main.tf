@@ -19,6 +19,17 @@ data "aws_subnets" "default" {
     }
 }
 
+data "terraform_remote_state" "db" {
+    backend = "s3"
+    config = {
+        bucket = "paul-moros-terraform-up-and-running-state"
+        key = "stage/data-stores/mysql/terraform.tfstate"
+        region = "us-east-2"
+    }
+
+}
+
+
 resource "aws_launch_configuration" "example" {
     image_id = "ami-0c55b159cbfafe1f0"
     instance_type = "t2.micro"
