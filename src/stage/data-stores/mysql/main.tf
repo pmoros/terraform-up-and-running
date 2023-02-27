@@ -17,6 +17,9 @@ resource "aws_db_instance" "example" {
   username          = "admin"
   # How should we set the password?
   password = data.aws_secretsmanager_secret_version.db_password.secret_string
+  skip_final_snapshot = true
+  backup_retention_period = 0
+  apply_immediately = true
 }
 
 data "aws_secretsmanager_secret_version" "db_password" {

@@ -1,8 +1,13 @@
-# terraform {
-#   backend "s3" {
-#     key    = "modules/services/webserver-cluster/terraform.tfstate"
-#   }
-# }
+terraform {
+  required_version = ">= 1.0.0, < 2.0.0"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"
+    }
+  }
+}
 
 data "aws_vpc" "default" {
   default = true
