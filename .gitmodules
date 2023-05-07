@@ -1,0 +1,6 @@
+[submodule "terraform-up-and-running-code"]
+	path = terraform-up-and-running-code
+	url = git@github.com:brikis98/terraform-up-and-running-code.git
+[submodule "book-examples"]
+	path = book-examples
+	url = git@github.com:brikis98/terraform-up-and-running-code.git
